@@ -32,37 +32,6 @@ UsuariosAPI/
 └── UsuariosAPI.csproj
 ```
 
----
-
-## Cómo ejecutar la API
-
-### Prerrequisitos
-- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) instalado
-
-### Pasos
-
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/tu-usuario/UsuariosAPI.git
-cd UsuariosAPI
-
-# 2. Restaurar paquetes NuGet
-dotnet restore
-
-# 3. Aplicar migraciones (crea la base de datos SQLite automáticamente)
-dotnet ef database update
-
-# 4. Ejecutar la aplicación
-dotnet run
-```
-
-La API estará disponible en:
-- **Swagger UI:** `http://localhost:5000` (raíz)
-- **API Base URL:** `http://localhost:5000/api/usuarios`
-
-> **Nota:** Las migraciones también se aplican automáticamente al iniciar la aplicación (`db.Database.Migrate()` en `Program.cs`).
-
----
 
 ## Endpoints disponibles
 
@@ -89,7 +58,7 @@ La API estará disponible en:
 
 ---
 
-## Probar con Postman
+## Prueba con Postman
 
 ### 1. Crear usuario (POST)
 - **URL:** `POST http://localhost:5000/api/usuarios`
@@ -160,11 +129,6 @@ La API estará disponible en:
 { "mensaje": "Usuario con ID 1 eliminado correctamente." }
 ```
 
----
-
-## Probar con Swagger
-
-Al ejecutar la aplicación, navega a `http://localhost:5000` para acceder a la interfaz de Swagger UI donde puedes probar todos los endpoints directamente desde el navegador.
 
 ---
 
@@ -178,25 +142,3 @@ Al ejecutar la aplicación, navega a `http://localhost:5000` para acceder a la i
 | 404 Not Found | Usuario no encontrado |
 
 ---
-
-## Capturas de pantalla
-
-> *(Agregar capturas de Postman/Swagger aquí después de ejecutar la API)*
-
-### Swagger UI - Lista de endpoints
-![Swagger UI](screenshots/swagger-ui.png)
-
-### POST - Crear usuario
-![POST Usuario](screenshots/post-usuario.png)
-
-### GET - Obtener todos los usuarios
-![GET Usuarios](screenshots/get-usuarios.png)
-
-### PUT - Actualizar usuario
-![PUT Usuario](screenshots/put-usuario.png)
-
-### DELETE - Eliminar usuario
-![DELETE Usuario](screenshots/delete-usuario.png)
-
-### Error - Correo duplicado (400)
-![Error Duplicado](screenshots/error-duplicado.png)
